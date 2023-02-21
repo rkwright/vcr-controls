@@ -1,0 +1,78 @@
+<HTML>
+
+<HEAD>
+<script language="JavaScript">
+
+function two_blocks()
+{       
+        document.Animator.setDefault();
+        document.Animator.setAutoRefresh(false);
+        document.Animator.setTimeDisplay(false);
+        document.Animator.shiftPixOrigin(-140,-20);
+
+        tableid=document.Animator.addObject("rectangle","x=0,y=-0.1,w=1000,h=5");
+        document.Animator.setRGB(tableid,100,100,100);
+
+        string1id=document.Animator.addObject("rectangle","x=0+0.5*t*t,y=1.5,w=60,h=4");
+        document.Animator.setRGB(string1id,0,0,0);
+        string2id=document.Animator.addObject("rectangle","x=5.5+0.5*t*t,y=1.5,w=100,h=4");
+        document.Animator.setRGB(string2id,250,120,120);
+        handid=document.Animator.addObject("image","x=8+0.5*t*t,y=2.2,file=images/hand.gif");
+        box2id=document.Animator.addObject("rectangle","x=-2.5+0.5*t*t,y=1.5,w=60,h=60");
+        document.Animator.setRGB(box2id,0,250,0);
+        box2aid=document.Animator.addObject("rectangle","x=-2.5+0.5*t*t,y=1.5,w=56,h=56");
+        document.Animator.setRGB(box2aid,180,250,180);
+        box3id=document.Animator.addObject("rectangle","x=2.5+0.5*t*t,y=1.25,w=50,h=50");
+        document.Animator.setRGB(box3id,0,0,250);
+        box3aid=document.Animator.addObject("rectangle","x=2.5+0.5*t*t,y=1.25,w=46,h=46");
+        document.Animator.setRGB(box3aid,150,150,250);
+
+        document.Animator.setOneShot(0,10,"Stopped");
+
+        document.Animator.setAutoRefresh(true);
+        }
+
+
+</script>
+</HEAD>
+
+<body onload="two_blocks()">
+
+<center>
+<applet codebase="../classes/" code="animator4.Animator.class"
+ARCHIVE="Animator4_.jar,STools4.jar" align="baseline" width="600" height="200" id="Animator" name="Animator">
+  <param name="FPS" value="20">
+  <param name="dt" value="0.1">
+  <param name="pixPerUnit" value="20">
+  <param name="gridUnit" value="2">
+  <param name="showControls" value="false">
+</applet>
+<BR>
+<form>
+<input type="button" value="  play  " onclick="document.Animator.forward()">
+<input type="button" value=" pause" onclick="document.Animator.pause()">
+<input type="button" value="&lt;&lt;step" onclick="document.Animator.stepBack()">
+<input type="button" value="step&gt;&gt;" onclick="document.Animator.stepForward()">
+<input type="button" value=" reset  " onclick="document.Animator.reset()">
+</form>
+ </center>
+
+<center><h4>Two Blocks</H4></center>
+
+<p>In this situation two blocks, which are connected by a string, are accelerated to the right by a force applied to a second string.
+<BR>The green block weighs 6 N
+<BR>The blue block weighs 5 N
+
+<p>In which string is the tension larger?
+
+<OL>
+<LI>The string between the blocks has a larger tension
+<LI>The second string (on the right) has a larger tension
+<LI>The tension is the same in both strings
+</OL>
+
+
+
+</BODY>
+
+</HTML>
